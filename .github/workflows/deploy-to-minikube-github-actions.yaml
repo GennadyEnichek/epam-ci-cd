@@ -22,7 +22,6 @@ jobs:
     - name: Deploy to minikube
       run: |
         kubectl apply -f k8s-node-app.yaml
-        until curl nodejs-app:80; do echo "Waiting...."; sleep 2; done
         kubectl get pods
         
     - name: Test service URLs
