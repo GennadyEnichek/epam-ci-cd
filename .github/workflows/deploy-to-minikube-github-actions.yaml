@@ -23,7 +23,9 @@ jobs:
       run: |
         kubectl apply -f k8s-node-app.yaml
         kubectl get pods
-        
+        sleep 10
+        kubectl describe deploy nodejs-app
+        kubectl get pods
     - name: Test service URLs
       run: |
           minikube service list
